@@ -98,7 +98,7 @@ public class PathFinder {
         System.out.println("End");
         System.out.println(Arrays.toString(endC));
 
-        System.out.println("PATH");
+        System.out.println("Path taken");
         if (path == null) {
             System.out.println("No pathfound");
         } else {

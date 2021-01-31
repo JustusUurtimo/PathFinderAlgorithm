@@ -113,7 +113,7 @@ public class Algo {
             }
         }
 
-        System.out.println("TREES HIT");
+        System.out.println("Trees walked by");
         System.out.println(treesHit);
     }
 }
