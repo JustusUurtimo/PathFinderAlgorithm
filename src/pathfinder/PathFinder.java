@@ -50,23 +50,23 @@ public class PathFinder {
             
             //rows are fileRows - 2, since first two are coordinates
             rows = (int) fileRows - 2;
-            forest = new char[rows][columns];
+            forest = new char[columns][rows];
 
             //skip first two lines since they are coordinates
             scanner.nextLine();
             scanner.nextLine();
             
             //We go trough the file and parse each row in to the matrix
-            int matrixRow = 0;
+            int y = 0;
             while (scanner.hasNextLine()) {
                 String row = scanner.nextLine();
                 char[] rowChars = row.toCharArray();
 
-                for (int j = 0; j < columns; j++) {
-                    forest[matrixRow][j] = rowChars[j];
+                for (int x = 0; x < columns; x++) {
+                    forest[x][y] = rowChars[x];
 
                 }
-                matrixRow++;
+                y++;
 
             }
 
@@ -81,6 +81,7 @@ public class PathFinder {
         //start and end coords
         int[] startC = {Integer.parseInt(c[0].split(",")[0]), Integer.parseInt(c[0].split(",")[1])};
         int[] endC = {Integer.parseInt(c[1].split(",")[0]), Integer.parseInt(c[1].split(",")[1])};
+        
 
         //find the shortest path (this also prints the hits)
         ArrayList<int[]> path = algo.findPaths(rows, columns, forest, startC, endC);

@@ -28,9 +28,9 @@ public class Algo {
         // initialize the queue and visited matrix
         Queue<int[]> Q = new LinkedList<>();
         Q.add(start);
-        boolean[][] visited = new boolean[maxY][maxX];
+        boolean[][] visited = new boolean[maxX][maxY];
         // initialize the parent array
-        int[][][] parent = new int[maxY][maxX][];
+        int[][][] parent = new int[maxX][maxY][];
         visited[start[0]][start[1]] = true;
         
         // we stop when queue is empty or when we have visited the end coordinates
@@ -40,27 +40,27 @@ public class Algo {
             // we are now processing node u
             for (int[] d : dir) {
 
-                int i = u[0] + d[0];
-                int j = u[1] + d[1];
+                int x = u[0] + d[0];
+                int y = u[1] + d[1];
                 // visit the edge from u to (i, j)
-                if (i >= 0 && j >= 0 && i < maxY && j < maxX) {
+                if (y >= 0 && x >= 0 && y < maxY && x < maxX) {
                     
                     //we can't go through rocks and trees and we count the trees hit
-                    if (!visited[i][j] && (forest[i][j] == 'X' || forest[i][j] == 'O')) {
-                        if(forest[i][j] == 'X') {
+                    if (!visited[x][y] && (forest[x][y] == 'X' || forest[x][y] == 'O')) {
+                        if(forest[x][y] == 'X') {
                             treesHit++;
                         }
-                        visited[i][j] = true;
+                        visited[x][y] = true;
 
                     }
                     
-                    if (!visited[i][j] && forest[i][j] == '.') {
+                    if (!visited[x][y] && forest[x][y] == '.') {
 
                         // node (i, j) has not yet been visited and is not a wall, add it
-                        Q.add(new int[]{i, j});
-                        visited[i][j] = true;
+                        Q.add(new int[]{x, y});
+                        visited[x][y] = true;
                         // set the parent of (i, j) to be u
-                        parent[i][j] = u;
+                        parent[x][y] = u;
                     }
                 }
 
