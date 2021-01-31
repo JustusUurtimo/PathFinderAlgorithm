@@ -67,7 +67,7 @@ public class Algo {
             }
         }
         
-        // check whether a path exists
+        // check whether a path exist
         if (!visited[end[0]][end[1]]) {
             return null;
         }
