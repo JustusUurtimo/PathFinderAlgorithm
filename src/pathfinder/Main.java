@@ -5,19 +5,8 @@
  */
 package pathfinder;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
+
 
 /**
  *
@@ -30,20 +19,10 @@ public class Main {
      */
 
 
-    public static void main(String[] args) throws IOException, Exception {
+    public static void main(String[] args) throws IOException {
         
         PathFinder pathFinder = new PathFinder();
         pathFinder.findPath();
 
     }
-
-    public static void print2D(String mat[][]) {
-        // Loop through all rows 
-        for (String[] row : mat) // converting each row as string 
-        // and then printing in a separate line 
-        {
-            System.out.println(Arrays.toString(row));
-        }
-    }
-
 }

@@ -25,7 +25,7 @@ public class Algo {
     //the directions we can go from each step
     private int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-    public ArrayList<int[]> findPaths(int maxY, int maxX, char[][] forest, int[] start, int[] end) {
+    public ArrayList<int[]> algo(int maxY, int maxX, char[][] forest, int[] start, int[] end) {
         // initialize the queue and visited matrix
         Queue<int[]> Q = new LinkedList<>();
         Q.add(start);
@@ -89,7 +89,7 @@ public class Algo {
         return path;
     }
 
-    public void countTrees(int maxX, int maxY, ArrayList<int[]> path, char[][] forest) {
+    private void countTrees(int maxX, int maxY, ArrayList<int[]> path, char[][] forest) {
         //count all unique trees we walked by
         boolean[][] treesWalkedBy = new boolean[maxX][maxY];
         ArrayList<int[]> pathHelper = path;
